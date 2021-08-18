@@ -7,7 +7,7 @@ products.each do |product|
 	a_element = product.at_css('.awV9E')
 	url = URI.join('https://www.aliexpress.com', a_element['href']).to_s.split('?').first
 
-	product_ids << product.css('a').attr('href').match(/\/item\/([0-9]+)\//)[1]
+	product_ids << a_element['href'].scan(/[0-9]+/)[0]
 
 	pages << {
 		url: url,
@@ -15,7 +15,7 @@ products.each do |product|
 		fetch_type: 'browser',
 		force_fetch: true,
 		vars: {
-			page_num: page['vars']['page_num']
+			page_num: page['vars']['page_num'],
 			category: "Women's clothing",
 			url: url
 		}
@@ -32,3 +32,4 @@ pages << {
 	vars: {
 		page_num: 2
 	}
+}
