@@ -1,8 +1,8 @@
 seeder:
   file: ./seeder/seeder.rb
-  disabled: false
+  disabled: true
 
 parsers:
   - file: ./parsers/listings.rb
     page_type: listings
-    disabled: false
+    disabled: true
