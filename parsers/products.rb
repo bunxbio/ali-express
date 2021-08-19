@@ -39,6 +39,6 @@ if return_element
 	product['return_policy'] = return_element.text
 end
 
-product['_collection'] = 'product'
+product['_collection'] = 'products'
 
 outputs << product
