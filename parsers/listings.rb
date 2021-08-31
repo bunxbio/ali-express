@@ -27,8 +27,9 @@ end
 
 
 current_page_num = page['vars']['page_num']
+LIMIT_PAGE = 25
 
-if products
+if products && (current_page_num <= LIMIT_PAGE)
 	next_page = "https://www.aliexpress.com/category/100003109/women-clothing.html?trafficChannel=main&catName=women-clothing&CatId=100003109&ltype=wholesale&SortType=default&page=#{current_page_num + 1}"
 
 	pages << {
